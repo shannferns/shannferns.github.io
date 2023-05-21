@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>StatVantage - Statistical Test Recommendation</title>
+</head>
+
+<body>
+  <div class="jumbotron jumbotron-fluid bg-dark text-white">
+    <div class="container">
+      <h1 class="display-4">StatVantage</h1>
+      <p class="lead">Welcome to StatVantage! This tool helps you determine the appropriate statistical test based on your variables and purpose. Use the tool below to get a recommendation.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="mt-4">Statistical Test Tool</h2>
+    <form id="testForm">
+      <div class="form-group">
+        <label for="ivType">IV Type:</label>
+        <select id="ivType" class="form-control" required>
+          <option value="">Select IV Type</option>
+          <option value="categorical">Categorical</option>
+          <option value="continuous">Continuous</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="dvType">DV Type:</label>
+        <select id="dvType" class="form-control" required>
+          <option value="">Select DV Type</option>
+          <option value="categorical">Categorical</option>
+          <option value="continuous">Continuous</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="purpose">Purpose:</label>
+        <select id="purpose" class="form-control" required>
+          <option value="">Select Purpose</option>
+          <option value="test difference">Test Difference</option>
+          <option value="relationship">Relationship</option>
+          <option value="predict">Predict</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="sampleSize">Sample Size:</label>
+        <select id="sampleSize" class="form-control" required>
+          <option value="">Select Sample Size</option>
+          <option value="lessThan30">Less than 30</option>
+          <option value="greaterThan30">Greater than 30</option>
+          <option value="unknown">Unknown</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="numIVs">Number of IVs:</label>
+        <input type="number" id="numIVs" class="form-control" min="1" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <div id="result" class="result-box mt-4"></div>
+
+    <div class="mt-4">
+      <h2>Understanding the Concepts</h2>
+
+      <div>
+        <h4>Categorical and Continuous Variables:</h4>
+        <p>In statistics, categorical variables represent data that can be divided into distinct groups or categories. Examples include gender, ethnicity, or survey responses. On the other hand, continuous variables represent data that can take any numeric value within a range. Examples include height, weight, or temperature.</p>
+      </div>
+
+      <div>
+        <h4>Sample Size:</h4>
+        <p>The sample size refers to the number of observations or participants in a study. It is important in statistical analysis as it affects the power and reliability of the results. Generally, a larger sample size provides more accurate and reliable estimates.</p>
+      </div>
+
+      <div>
+        <h4>Purpose:</h4>
+        <p>The purpose of your analysis determines the appropriate statistical test. If you want to compare the means of two groups, you may choose a test for testing the difference. If you want to examine the relationship between two variables, you may choose a test for relationship analysis. If you want to make predictions or create a model, you may choose a test for predictive analysis.</p>
+      </div>
+
+      <div>
+        <h4>Common Test Types:</h4>
+        <ul>
+          <li>T-Test: Used to compare the means of two groups.</li>
+          <li>ANOVA: Used to compare the means of three or more groups.</li>
+          <li>Pearson Correlation: Used to measure the linear relationship between two continuous variables.</li>
+          <li>Chi-Square Test: Used to examine the relationship between two categorical variables.</li>
+          <li>Regression Analysis: Used to model and predict the relationship between variables.</li>
+          <!-- Add more test types and descriptions as needed -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
